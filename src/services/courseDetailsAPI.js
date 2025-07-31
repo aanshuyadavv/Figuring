@@ -55,7 +55,7 @@ export function publishCourse(courseId, navigate, token) {
         throw new Error(response.data.message || "Publish course API error");
       }
 
-      console.log("response from publish course api", response);
+      // console.log("response from publish course api", response);
       dispatch(setCourseData(response.data.course));
       toast.success("Course published successfully");
       dispatch(resetCourseState());
@@ -116,7 +116,7 @@ export function deleteTheCourse(courseId, token) {
         throw new Error(response.data.message || "delete course api error");
       }
 
-      console.log("response from delete course api", response);
+      // console.log("response from delete course api", response);
       dispatch(setCourses(response.data.updatedUser.courses));
       toast.success("Course deleted successfully");
     } catch (error) {

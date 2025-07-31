@@ -30,10 +30,10 @@ export function createNewSection({ sectionName, courseId }, token) {
         throw new Error(response.data.message || "create section api error");
       }
 
-      console.log(
-        "create new section response",
-        response.data.data.courseContent
-      );
+      // console.log(
+      //   "create new section response",
+      //   response.data.data.courseContent
+      // );
       dispatch(setSection(response.data.data.courseContent));
     } catch (error) {
       toast.error(error.message || "Failed to create section");
@@ -47,7 +47,7 @@ export function createNewSection({ sectionName, courseId }, token) {
 export function deleteSection({ sectionId, courseId }, token) {
   return async (dispatch) => {
     try {
-      console.log("section id and course id", sectionId, courseId);
+      // console.log("section id and course id", sectionId, courseId);
       dispatch(setLoading(true));
       const response = await apiconnector(
         "DELETE",
@@ -61,10 +61,10 @@ export function deleteSection({ sectionId, courseId }, token) {
         throw new Error("delete section api error", response.data.message);
       }
 
-      console.log(
-        "delete section response",
-        response.data.updatedCourse.courseContent
-      );
+      // console.log(
+      //   "delete section response",
+      //   response.data.updatedCourse.courseContent
+      // );
       dispatch(setSection(response.data.updatedCourse.courseContent));
       toast.success("Section deleted successfully");
     } catch (error) {
@@ -79,12 +79,12 @@ export function deleteSection({ sectionId, courseId }, token) {
 export function updateSection({ sectionName, sectionId, courseId }, token) {
   return async (dispatch) => {
     try {
-      console.log(
-        "sectionName, sectionId, courseId",
-        sectionName,
-        sectionId,
-        courseId
-      );
+      // console.log(
+      //   "sectionName, sectionId, courseId",
+      //   sectionName,
+      //   sectionId,
+      //   courseId
+      // );
       dispatch(setLoading(true));
 
       const response = await apiconnector(
@@ -100,10 +100,10 @@ export function updateSection({ sectionName, sectionId, courseId }, token) {
         throw new Error(response.data.message || "Update section API error");
       }
 
-      console.log(
-        "Updated courseContent from backend:",
-        response.data.course.courseContent
-      );
+      // console.log(
+      //   "Updated courseContent from backend:",
+      //   response.data.course.courseContent
+      // );
 
       dispatch(setSection(response.data.course.courseContent));
       toast.success("Section updated successfully");

@@ -12,7 +12,7 @@ export function createOrder(courseId, token) {
           Authorization: `Bearer ${token}`,
         }
       );
-      console.log("response from create order", response);
+      // console.log("response from create order", response);
     } catch (error) {
       console.log("error in create order", error);
       toast.error("Failed to create order");
@@ -31,7 +31,7 @@ export function verifyPayment(data, token) {
           Authorization: `Bearer ${token}`,
         }
       );
-      console.log("response from verify payment", response);
+      // console.log("response from verify payment", response);
     } catch (error) {
       console.log("error in verify payment", error);
       toast.error("Failed to verify payment");
@@ -50,7 +50,7 @@ export function confirmEnrollment(data, token) {
           Authorization: `Bearer ${token}`,
         }
       );
-      console.log("response from confirm enrollment", response);
+      // console.log("response from confirm enrollment", response);
     } catch (error) {
       console.log("error in confirm enrollment", error);
       toast.error("Failed to confirm enrollment");

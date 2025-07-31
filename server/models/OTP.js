@@ -21,21 +21,22 @@ async function sendVerificationEmail(email, otp) {
   try {
     const mailResponse = await mailSender(
       email,
-      "Verification Email",
+      "Verify Your Email - Figuring",
       `
-        <div style="font-family: Arial, sans-serif; line-height: 1.6;">
-          <h2 style="color: #333;">Verify Your Email</h2>
-          <p>Hello,</p>
-          <p>Thank you for registering. Please use the OTP below to verify your email address:</p>
-          <div style="font-size: 1.5rem; font-weight: bold; color: #222; margin: 10px 0;">
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; background-color: #f9f9f9; border-radius: 10px; border: 1px solid #ddd;">
+          <h2 style="color: #2c3e50; text-align: center;">Verify Your Email</h2>
+          <p style="color: #333;">Hello,</p>
+          <p style="color: #333;">Thanks for signing up on <strong>Figuring</strong>. Please use the OTP below to verify your email address:</p>
+          <div style="font-size: 1.8rem; font-weight: bold; color: #000; background: #e0e0e0; padding: 10px 20px; border-radius: 8px; text-align: center; letter-spacing: 2px; margin: 20px 0;">
             ${otp}
           </div>
-          <p>This OTP is valid for the next 10 minutes. Please do not share it with anyone.</p>
-          <p style="color: #555;">– Team LearnCode</p>
+          <p style="color: #333;">This OTP is valid for the next <strong>10 minutes</strong>. Please do not share it with anyone.</p>
+          <hr style="border: none; border-top: 1px solid #ddd; margin: 30px 0;" />
+          <p style="color: #888; font-size: 0.9rem;">If you didn't request this email, please ignore it.</p>
+          <p style="color: #555; font-weight: 500;">– Team Figuring</p>
         </div>
       `
     );
-    console.log("Email sent successfully:", mailResponse);
   } catch (error) {
     console.error("Error while sending verification email:", error);
     throw error;
@@ -43,7 +44,7 @@ async function sendVerificationEmail(email, otp) {
 }
 
 otpSchema.pre("save", async function (next) {
-  console.log("new OTP document is being saved to the database.");
+  // console.log("new OTP document is being saved to the database.");
   if (this.isNew) {
     try {
       await sendVerificationEmail(this.email, this.otp);

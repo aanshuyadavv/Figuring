@@ -7,7 +7,7 @@ const { CREATE_SUBSECTION_API, DELETE_SUBSECTION_API, UPDATE_SUBSECTION_API } =
 export function createSubSection(formData, token) {
   return async (dispatch) => {
     try {
-      console.log("formdata", formData);
+      // console.log("formdata", formData);
       dispatch(setLoading(true));
       const response = await apiconnector(
         "POST",
@@ -29,7 +29,6 @@ export function createSubSection(formData, token) {
           subsections: response.data.updateSection.subsection,
         })
       );
-      // console.log("set ho gya slice mein subsetion", response.data.updateSection.subsection)
       toast.success("subsection created successfully");
     } catch (error) {
       toast.error(error.message || "Failed to create subsection");
@@ -59,7 +58,7 @@ export function deleteSubSection({ subSectionId, sectionId }, token) {
           response.data.message || "delete subsection api failed"
         );
       }
-      console.log("delete subsection api response", response);
+      // console.log("delete subsection api response", response);
       dispatch(
         setSubSection({
           sectionId: response.data.updateSection._id,
@@ -92,7 +91,7 @@ export function updateSubSection(formData, token) {
           response.data.message || "update subsection api failed"
         );
       }
-      console.log("update subsection response", response);
+      // console.log("update subsection response", response);
       dispatch(
         setSubSection({
           sectionId: response.data.updatedSection._id,

@@ -164,7 +164,7 @@ const HomePage = () => {
             </h2>
             <p className="text-gray-400">
               Instructors from around the world teach millions of students on
-              StudyNotion. We provide the tools and skills to teach what you
+              Figuring. We provide the tools and skills to teach what you
               love.
             </p>
             <YellowBtn text="Start Learning Today" />

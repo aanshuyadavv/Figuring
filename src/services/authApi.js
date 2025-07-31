@@ -37,7 +37,7 @@ export function login(email, password, navigate) {
         throw new Error(response.data.message);
       }
       toast.success("Login successful");
-      console.log("response.data", response.data);
+      // console.log("response.data", response.data);
       dispatch(setToken(response.data.token));
       dispatch(setUser(response.data.user));
 
@@ -66,7 +66,7 @@ export function login(email, password, navigate) {
 
       console.log("userImage", userImage);
       const updatedUser = { ...user, image: userImage };
-      console.log("updated user", updatedUser);
+      // console.log("updated user", updatedUser);
       dispatch(setUser(updatedUser));
       dispatch(setImage(userImage));
       localStorage.setItem("image", JSON.stringify(userImage));
@@ -105,7 +105,7 @@ export function signup(
         otp,
         navigate,
       });
-      console.log("signup api response...", response);
+      // console.log("signup api response...", response);
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
@@ -128,7 +128,7 @@ export function sendOtp(email, navigate) {
       const response = await apiconnector("POST", SENDOTP_API, {
         email,
       });
-      console.log("send otp api response...", response);
+      // console.log("send otp api response...", response);
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
@@ -164,7 +164,7 @@ export function resetPasswordToken(email, setEmailSent) {
       const response = await apiconnector("POST", RESETPASSWORDTOKEN_API, {
         email,
       });
-      console.log("response of reset token password", response);
+      // console.log("response of reset token password", response);
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
@@ -190,7 +190,7 @@ export function resetPassword(password, confirmPassword, token, navigate) {
         confirmPassword,
         token,
       });
-      console.log("response of reset password", response);
+      // console.log("response of reset password", response);
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
@@ -230,7 +230,7 @@ export function setProfileImage(img) {
         }
       );
 
-      console.log("Response of set profile image", response);
+      // console.log("Response of set profile image", response);
 
       if (!response.data.success) {
         throw new Error(response.data.message);
@@ -267,7 +267,7 @@ export function updateProfile(data, navigate) {
       const response = await apiconnector("PUT", UPDATEPROFILE_API, data, {
         Authorization: `Bearer ${token}`,
       });
-      console.log("Response of update profile", response);
+      // console.log("Response of update profile", response);
       if (response.data.success) {
         toast.success("profle updated successfully");
         dispatch(setUser(response.data.newUser));
@@ -364,7 +364,7 @@ export function getUserEnrolledCourses() {
         toast.success("Enrolled courses fetched successfully");
         dispatch(setEnrolledCourses(response.data.data));
       }
-      console.log("Response of get enrolled courses", response);
+      // console.log("Response of get enrolled courses", response);
       // result = response.data.data;
       // console.log("result", result);
     } catch (error) {
