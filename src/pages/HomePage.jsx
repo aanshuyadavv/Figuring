@@ -170,10 +170,6 @@ const HomePage = () => {
             <YellowBtn text="Start Learning Today" />
           </motion.div>
         </div>
-
-        <p className="text-center mt-12 text-lg font-semibold">
-          Reviews From Others
-        </p>
       </div>
     </>
   );
