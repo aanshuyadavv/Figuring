@@ -9,7 +9,7 @@ const LearningGrid = () => {
       heading: "World-Class Learning for",
       highlightText: "Anyone, anywhere",
       description:
-        "StudyMotion partners with more than 275+ leading universities and companies to bring flexible, affordable, job-relevant online learning to individuals and organizations worldwide.",
+        "Figuring partners with more than 275+ leading universities and companies to bring flexible, affordable, job-relevant online learning to individuals and organizations worldwide.",
       btnText: "Learn More",
       btnLink: "/",
     },

@@ -125,7 +125,7 @@ const HomePage = () => {
 
           <div className="lg:w-1/2 text-gray-600">
             <p>
-              The modern StudyNotion dictates its own terms. Today, to be a
+              The modern Figuring dictates its own terms. Today, to be a
               competitive specialist requires more than professional skills.
             </p>
             <div className="mt-4">
@@ -164,8 +164,7 @@ const HomePage = () => {
             </h2>
             <p className="text-gray-400">
               Instructors from around the world teach millions of students on
-              Figuring. We provide the tools and skills to teach what you
-              love.
+              Figuring. We provide the tools and skills to teach what you love.
             </p>
             <YellowBtn text="Start Learning Today" />
           </motion.div>

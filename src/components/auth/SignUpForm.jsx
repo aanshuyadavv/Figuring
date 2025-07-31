@@ -92,7 +92,9 @@ const SignUpForm = () => {
                 name={field}
                 value={formData[field]}
                 onChange={changeHandler}
-                placeholder={`Enter ${field === "firstName" ? "first" : "last"} name`}
+                placeholder={`Enter ${
+                  field === "firstName" ? "first" : "last"
+                } name`}
                 className="bg-gray-800 text-white rounded-md w-full px-4 py-2 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
             </label>
@@ -132,13 +134,13 @@ const SignUpForm = () => {
               className="bg-gray-800 text-white rounded-md w-full px-4 py-2 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
             <span
-              className="absolute right-3 top-[45px] text-xl cursor-pointer text-gray-400 hover:text-white"
+              className="absolute right-3 top-[38px] text-xl cursor-pointer text-gray-400 hover:text-white"
               onClick={() => handleClick("password")}
             >
               {showPassword.password ? (
-                <AiOutlineEyeInvisible />
-              ) : (
                 <AiOutlineEye />
+              ) : (
+                <AiOutlineEyeInvisible />
               )}
             </span>
           </label>
@@ -158,13 +160,13 @@ const SignUpForm = () => {
               className="bg-gray-800 text-white rounded-md w-full px-4 py-2 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
             <span
-              className="absolute right-3 top-[45px] text-xl cursor-pointer text-gray-400 hover:text-white"
+              className="absolute right-3 top-[38px] text-xl cursor-pointer text-gray-400 hover:text-white"
               onClick={() => handleClick("confirmPassword")}
             >
               {showPassword.confirmPassword ? (
-                <AiOutlineEyeInvisible />
-              ) : (
                 <AiOutlineEye />
+              ) : (
+                <AiOutlineEyeInvisible />
               )}
             </span>
           </label>

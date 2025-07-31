@@ -65,9 +65,9 @@ const LoginForm = () => {
         />
         <span
           onClick={() => setShowPassword(!showPassword)}
-          className="absolute right-3 top-[45px] text-xl text-gray-400 cursor-pointer"
+          className="absolute right-3 top-[38px] text-xl text-gray-400 cursor-pointer"
         >
-          {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+          {showPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
         </span>
         <Link to="/forgot-password">
           <p className="text-xs mt-1 text-blue-400 hover:text-blue-300 text-right">
