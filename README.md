@@ -42,3 +42,4 @@
 - Nodemailer
 - JWT (for auth)
 
+Refer to my "CHALLENGES.md" to know the challenges I faced while creating this project and how I fixed them.
