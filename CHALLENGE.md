@@ -1,6 +1,6 @@
 # PROBLEMS.md – Things That Went Wrong While Making Figuring (and How I Fixed Them)
 
-This file is like my diary of all the bugs, mistakes, and confusing things I faced while building Figuring — and how I figured them out step by step.
+This file is like my diary of all the bugs, mistakes, and confusing things I faced while building Figuring — and how I figured them out step by step. Though I started documenting a little late.
 
 ---
 
@@ -110,44 +110,21 @@ I used crypto.createHmac() properly with the right format.
 User opened one course but saw reviews of another.  
 I checked if courseId is valid before fetching reviews.
 
-### 21. New review didn’t appear
+### 20. New review didn’t appear
 User submitted review but UI didn’t update.  
 I called the fetch function again after submission.
 
-### 22. Same user gave multiple reviews
+### 21. Same user gave multiple reviews
 One user could review the same course 2–3 times.  
 I added a check: only one review per user per course.
 
 ---
 
-## DESIGN ISSUES
-
-### 23. Modal looked ugly
-It had poor spacing, bad fonts.  
-I redesigned it with Tailwind CSS and better layout.
-
-### 24. Star rating not working
-Clicking stars didn’t change the value.  
-I connected the stars to the form using setValue().
-
----
-
 ## OTHER BUGS
 
-### 25. Redux not synced with localStorage
+### 22. Redux not synced with localStorage
 Cart updates were not saved across refresh.  
 I stored Redux data in localStorage every time it changed.
 
-### 26. Too many API calls
-Same API was being called multiple times.  
-I fixed the useEffect dependencies to call it only once.
-
-### 27. Backend errors were not helpful
-It always said “Something went wrong”.  
-I added clear error messages with res.status().json({ message: "..." }).
-
 ---
-
-## What I Learned
-
 Made with a lot of bugs and fixes.
