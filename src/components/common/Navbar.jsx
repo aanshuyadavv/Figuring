@@ -51,7 +51,7 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <ul className="hidden md:flex items-center gap-6 text-white font-medium relative">
           {Navlinks.map((link, index) =>
-            link.title === "Catalog" ? (
+            link.title === "Catalog" && token && user ? (
               <li
                 key={index}
                 className="relative group cursor-pointer text-white"
@@ -60,27 +60,25 @@ const Navbar = () => {
                   {link.title}
                   <FcExpand />
                 </div>
-                {token && (
-                  <div className="absolute top-10 left-0 bg-white text-black w-52 shadow-md rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-20">
-                    {subLinks.length > 0 ? (
-                      subLinks.map((sub, i) => (
-                        <Link
-                          key={i}
-                          to={`/catalog/${sub.name.split(" ").join("-")}-${
-                            sub._id
-                          }`}
-                          className="block px-4 py-2 hover:bg-gray-100 hover:text-blue-600 transition"
-                        >
-                          {sub.name}
-                        </Link>
-                      ))
-                    ) : (
-                      <div className="px-4 py-2 text-sm text-gray-400">
-                        No categories
-                      </div>
-                    )}
-                  </div>
-                )}
+                <div className="absolute top-10 left-0 bg-white text-black w-52 shadow-md rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-20">
+                  {subLinks.length > 0 ? (
+                    subLinks.map((sub, i) => (
+                      <Link
+                        key={i}
+                        to={`/catalog/${sub.name.split(" ").join("-")}-${
+                          sub._id
+                        }`}
+                        className="block px-4 py-2 hover:bg-gray-100 hover:text-blue-600 transition"
+                      >
+                        {sub.name}
+                      </Link>
+                    ))
+                  ) : (
+                    <div className="px-4 py-2 text-sm text-gray-400">
+                      No categories
+                    </div>
+                  )}
+                </div>
               </li>
             ) : (
               <li key={index}>
@@ -98,6 +96,7 @@ const Navbar = () => {
             )
           )}
         </ul>
+
         {/* Right Side */}
         <div className="hidden md:flex items-center gap-3">
           {token && user ? (
